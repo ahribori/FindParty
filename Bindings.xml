@@ -1,0 +1,5 @@
+﻿<Bindings>
+	<Binding name="FP_TOGGLE" header="FINDPARTY" category="ADDONS">
+		if (FP_Frame:IsShown()) then FP_Frame:Hide(); else FP_Frame:Show(); end
+	</Binding>
+</Bindings>

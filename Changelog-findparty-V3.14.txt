@@ -1,0 +1,199 @@
+------------------------------------------------------------------------
+r118 | chrsm | 2015-01-12 09:50:22 +0000 (Mon, 12 Jan 2015) | 4 lines
+Changed paths:
+   A /tags/V3.14 (from /trunk:117)
+
+Tagging as V3.14
+
+■ 케릭명에 서버명 표시 제거 오류 수정
+ - 귓말 안가는 버그 수정
+------------------------------------------------------------------------
+r117 | chrsm | 2015-01-12 09:50:05 +0000 (Mon, 12 Jan 2015) | 3 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+
+V3.14
+■ 케릭명에 서버명 표시 제거 오류 수정
+ - 귓말 안가는 버그 수정
+------------------------------------------------------------------------
+r115 | chrsm | 2015-01-11 15:38:48 +0000 (Sun, 11 Jan 2015) | 4 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V3.13
+■ 케릭명에 서버명 표시 제거
+■ 던전 편집 저장기능 수정 중
+ - 현재 wow 두번 재시작해야 정상 저장됨.
+------------------------------------------------------------------------
+r113 | chrsm | 2015-01-08 11:40:42 +0000 (Thu, 08 Jan 2015) | 4 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V3.11
+■ 던전 난이도 분류오류 수정
+■ 전체 옵션 초기화 미작동 오류 수정
+■ 도움말 수정
+------------------------------------------------------------------------
+r112 | chrsm | 2015-01-07 13:48:57 +0000 (Wed, 07 Jan 2015) | 2 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/localization.lua
+
+전체 옵션 초기화(Reload UI) 미작동 오류 수정
+도움말 수정
+------------------------------------------------------------------------
+r110 | chrsm | 2015-01-07 13:22:35 +0000 (Wed, 07 Jan 2015) | 9 lines
+Changed paths:
+   M /trunk/FindParty.lua
+
+V3.1
+■ 던전 리스트 확장팩 순서로 정렬
+ - 명예(전장), 기타 메뉴는 확장팬 순서가 아닌 하단에 고정
+■ 게임 재시작 시 미니맵 버튼 설정 유지기능 추가
+■ 리스트 우클릭 시 귓말창 오픈기능 추가
+ - 우클릭 파티신청 기능 제거
+■ 파티신청 귓말에 아이템 레벨기능 강화
+ - 평균템렙, 착용템렙 두가지 항목 전송
+ - 템렙 소수점 자리 제거
+------------------------------------------------------------------------
+r109 | chrsm | 2015-01-07 13:19:32 +0000 (Wed, 07 Jan 2015) | 9 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V3.1
+■ 던전 리스트 확장팩 순서로 정렬
+ - 명예(전장), 기타 메뉴는 확장팬 순서가 아닌 하단에 고정
+■ 게임 재시작 시 미니맵 버튼 설정 유지기능 추가
+■ 리스트 우클릭 시 귓말창 오픈기능 추가
+ - 우클릭 파티신청 기능 제거
+■ 파티신청 귓말에 아이템 레벨기능 강화
+ - 평균템렙, 착용템렙 두가지 항목 전송
+ - 템렙 소수점 자리 제거
+------------------------------------------------------------------------
+r107 | chrsm | 2015-01-03 16:05:27 +0000 (Sat, 03 Jan 2015) | 5 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V3.0
+■ 던전 리스트 초기화 기능 복구
+ - localization.lua파일의 내용으로 던전 리스트 초기화
+ - 옵션 → 던전 편집 → 기본값 불러오기(Reload UI)
+ - 메뉴얼의 Caution 적용 필요할 수 있음
+------------------------------------------------------------------------
+r105 | chrsm | 2015-01-03 13:01:43 +0000 (Sat, 03 Jan 2015) | 2 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+
+V2.9
+■ 미니맵 버튼 활성/비활성 기능 추가
+------------------------------------------------------------------------
+r103 | chrsm | 2015-01-03 03:10:29 +0000 (Sat, 03 Jan 2015) | 4 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+
+V2.895
+■ 강철 호드의 침략과 강철 선착장 충돌
+ - 동일 필터링 문자열 "강철"을 강철 선착장에서 제거
+ - 샤트라스 공격 필터링 단어충돌 버그 픽스
+------------------------------------------------------------------------
+r102 | chrsm | 2015-01-03 03:09:09 +0000 (Sat, 03 Jan 2015) | 1 line
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/localization.lua
+
+샤트라스 공격 필터링 단어충돌 버그 픽스
+------------------------------------------------------------------------
+r100 | chrsm | 2015-01-03 01:37:48 +0000 (Sat, 03 Jan 2015) | 2 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V2.89
+■ 강철 호드의 침략과 강철 선착장 충돌 버그 픽스
+------------------------------------------------------------------------
+r98 | chrsm | 2015-01-02 18:46:16 +0000 (Fri, 02 Jan 2015) | 1 line
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+개발자 수정
+------------------------------------------------------------------------
+r96 | chrsm | 2015-01-02 17:15:15 +0000 (Fri, 02 Jan 2015) | 3 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+
+V2.875
+ ■ 죽음의 기사 색상 구현오류 수정(초기화 필요)
+ ■ 초기화 시 자동 UI Reload 기능 적용
+------------------------------------------------------------------------
+r95 | chrsm | 2015-01-02 17:13:23 +0000 (Fri, 02 Jan 2015) | 3 lines
+Changed paths:
+   M /trunk/localization.lua
+
+V2.875
+ ■ 죽음의 기사 색상 구현오류 수정(초기화 필요)
+ ■ 초기화 시 자동 UI Reload 기능 적용
+------------------------------------------------------------------------
+r93 | chrsm | 2015-01-02 17:06:53 +0000 (Fri, 02 Jan 2015) | 2 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+
+V2.87
+ ■ 모집자 아이디 직업색상 적용
+------------------------------------------------------------------------
+r91 | chrsm | 2015-01-02 14:27:40 +0000 (Fri, 02 Jan 2015) | 7 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/FindParty.xml
+   M /trunk/localization.lua
+
+V2.86
+ ■ 던전 편집기능 정상화
+  - 난이도별 선택 기능
+  - 인던별 선택 난이도 별 필터링 기능
+ ■ 난이도 기준 변경 : 일반/영웅/신화
+  - 신화 던전 색상 전설템 색으로 적용 및 필터링 텍스트 색상 변경(기존 전설템 색)
+  - 드레노어의 전쟁군주 공격대 외에는 던전 난이도 기능 적용 제외
+------------------------------------------------------------------------
+r89 | chrsm | 2015-01-02 01:34:20 +0000 (Fri, 02 Jan 2015) | 3 lines
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/FindParty.xml
+
+V2.85
+기본 귓말기능 재 활성화(자신의 특성, 직업, 아이템 레벨로 귓말 파티참가 요청함. 나만의 귓말 사용 시 기본 귓말은 무시)
+직업 별 기본귓말 기능 제거
+------------------------------------------------------------------------
+r87 | chrsm | 2015-01-01 14:55:48 +0000 (Thu, 01 Jan 2015) | 1 line
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V2.83
+------------------------------------------------------------------------
+r85 | chrsm | 2014-12-26 15:56:16 +0000 (Fri, 26 Dec 2014) | 1 line
+Changed paths:
+   M /trunk/FindParty.lua
+   M /trunk/FindParty.toc
+   M /trunk/localization.lua
+
+V2.82
+------------------------------------------------------------------------
