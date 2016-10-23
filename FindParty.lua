@@ -964,6 +964,24 @@ function FP_DungeonFilter(dungeon, difficulty)
 	return true
 end
 
+--[[- 2016-10-23 아리보리(아즈샤라)
+--
+-- 사용자 필터 기능 추가.
+-- 사용자가 직접 입력한 필터를 검사하여, 원하는 광고를 구체적으로 필터링 할 수 있다.
+-- FP_CustomFiletr 함수는 광고 문자열을 인자로 받아, 사용자가 직접 입력한 문자들과 대조해
+-- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
+-- -]]
+function FP_CustomFilter(msg)
+	local userInputCustomFilterString = "2만올분골팟";
+	for word in string.gmatch(userInputCustomFilterString, '([^,]+)') do
+		if string.find(msg, word) then
+			flag = true
+			return true
+		end
+	end
+	return false
+end
+
 -----------------
 -- 제외 필터링 --
 -----------------
@@ -1251,7 +1269,7 @@ function FP_MenuClicked(self, button, menu, option)
 				shouterSelected = data
 				ChatFrame_SendTell(shouterSelected.name, FCF_GetCurrentChatFrame())
 			elseif FP_Options.rightButton then
-				-- 2016.10.23 아리보리(아즈샤라)가 추가
+				-- 2016.10.23 아리보리(아즈샤라) 추가
 
 				-- 파티찾기 창을 띄워놓고 퀘스트를 하다가 자꾸 오른쪽 클릭 실수로 귓말은 보내게 되어
 				-- Ctrl 키까지 눌러야 귓말이 가도록 수정
@@ -1324,16 +1342,26 @@ function FP_Refresh(quick)
 	for i = 1, table.getn(frameData) do
 		local info = frameData[i]
 		if info then
-			if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name)) then
-				if info == shouterSelected then
-					shouterSelected = nil
+
+			--[[- 2016-10-23 아리보리(아즈샤라)
+			--
+			-- 사용자 필터 기능 추가.
+			-- 사용자가 직접 입력한 필터를 검사하여, 원하는 광고를 구체적으로 필터링 할 수 있다.
+			-- FP_CustomFiletr 함수는 광고 문자열을 인자로 받아, 사용자가 직접 입력한 문자들과 대조해
+			-- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
+			-- -]]
+			if (FP_CustomFilter(info.msg)) then
+				if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name)) then
+					if info == shouterSelected then
+						shouterSelected = nil
+					end
+					info.enabled = false
+					info.num = nil
+				else
+					maxScroll = maxScroll + 1
+					info.enabled = true
+					info.num = maxScroll
 				end
-				info.enabled = false
-				info.num = nil
-			else
-				maxScroll = maxScroll + 1
-				info.enabled = true
-				info.num = maxScroll
 			end
 
 			if info.enabled and info.num > listOffset and rowIdx <= FP_Options.viewLines then
@@ -1352,6 +1380,7 @@ function FP_Refresh(quick)
 
 				--Message
 				local msg = info.msg
+
 				_G[rowName.."MsgText"]:SetText(msg)
 				_G[rowName.."DungeonText"]:SetText(info.dungeon)
 
