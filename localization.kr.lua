@@ -15,8 +15,10 @@ FP_TEXT_HELP = "도움말"
 FP_TEXT_APPLY = "파티신청"
 FP_TEXT_START_AD = "광고시작"
 FP_TEXT_STOP_AD = "광고중단"
+FP_TEXT_APPLY_FILTER = "필터적용"
 FP_TEXT_WH_LABEL = "귓속말 문구 : "
 FP_TEXT_AD_LABEL = "광고글 문구 : "
+FP_TEXT_FILTER_LABEL = "필터링 문구 : "
 FP_TEXT_CLOSE = "닫기"
 FP_TEXT_LIST_LABEL = "광고 문구"
 
@@ -79,6 +81,7 @@ FP_MESSAGE_ICON_LOCK = "미니맵 아이콘을 이동할 수 없도록 고정합
 FP_MESSAGE_ICON_UNLOCK = "이제 미니맵 아이콘을 이동할 수 있습니다."
 FP_MESSAGE_START_DUNGEON_FILTER = "관심 던전만 목록에 표시합니다."
 FP_MESSAGE_STOP_DUNGEON_FILTER = "모든 던전을 목록에 표시합니다."
+FP_MESSAGE_APPLY_CUSTOM_FILTER = "사용자 정의 필터링 문구를 적용합니다."
 
 FP_OPTIONS_CHANNEL = "파티찾기 채널 지정"
 FP_OPTIONS_INTERVAL = "광고 주기"

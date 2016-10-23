@@ -11,6 +11,7 @@ FP_Options = nil
 FP_Filter_Dungeon = {}
 FP_UserDefinedWhMsg = nil
 FP_UserDefinedAdMsg = nil
+FP_UserDefineFilterMsg = ""
 
 FP_Minimap_Save = {
 	ButtonRadius = 78,
@@ -972,14 +973,20 @@ end
 -- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
 -- -]]
 function FP_CustomFilter(msg)
-	local userInputCustomFilterString = "2만올분골팟";
+	local userInputCustomFilterString = FP_UserDefineFilterMsg
+	if userInputCustomFilterString == "" then
+		return true
+	end
 	for word in string.gmatch(userInputCustomFilterString, '([^,]+)') do
 		if string.find(msg, word) then
-			flag = true
 			return true
 		end
 	end
 	return false
+end
+
+function FP_SetCustomFilterText()
+	FP_UserDefineFilterMsg = FP_MenuFrameFilterText:GetText();
 end
 
 -----------------
@@ -1219,6 +1226,9 @@ function FP_MenuClicked(self, button, menu, option)
 		else
 			FP_StartAnnounce()
 		end
+	elseif menu == "APPLY_FILTER" then
+		FP_SetCustomFilterText()
+		FP_Print(FP_MESSAGE_APPLY_CUSTOM_FILTER)
 	elseif menu == "MENU_ACTIVATE_BELLNWINDOW" then
 		if FP_Options.activateBellnWindow then
 			FP_ActiveBellnWindow(false)
@@ -1447,6 +1457,7 @@ function FP_ListAdjust(adjust)
 	if newWidth < 1500 then
 		FP_MenuFrameWhText:SetWidth(newWidth-210)
 		FP_MenuFrameAdText:SetWidth(newWidth-210)
+		FP_MenuFrameFilterText:SetWidth(newWidth-210)
 	end
 	local newHeight = 40 + (newNumRow * 25)
 	FP_ListFrame:SetHeight(newHeight)
@@ -1493,6 +1504,7 @@ function FP_SetListPosition()
 		if FP_Position_Save.width < 1500 then
 			FP_MenuFrameWhText:SetWidth(FP_Position_Save.width-210)
 			FP_MenuFrameAdText:SetWidth(FP_Position_Save.width-210)
+			FP_MenuFrameFilterText:SetWidth(FP_Position_Save.width-210)
 		end
 		FP_ListFrame:SetHeight(40 + (FP_Options.viewLines * 25))
 	else
@@ -1907,11 +1919,22 @@ function FP_OnUpdate(self, elapsed)
 			else
 				i = i + 1
 			end
+
 		end
 		lastUpdatedTime = 0
 
 		FP_Refresh(true)
 	end
+
+	local j = 1
+	while j <= table.getn(frameData) do
+		if(not FP_CustomFilter(frameData[j].msg)) then
+			FP_RemoveList(frameData[j].name)
+		else
+			j = j + 1
+		end
+	end
+
 end
 
 ------------------------

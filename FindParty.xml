@@ -838,7 +838,7 @@
 			</Frame>
 			<Frame name="FP_MenuFrame" inherits="FP_FrameTemplate">
 				<Size>
-					<AbsDimension x="750" y="100"/>
+					<AbsDimension x="750" y="130"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOP" relativeTo="FP_ListFrame" relativePoint="BOTTOM">
@@ -865,6 +865,16 @@
 								<Anchor point="TOPLEFT" relativeTo="$parentWh" relativePoint="BOTTOMLEFT">
 									<Offset>
 										<AbsDimension x="0" y="-15"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentFilter" inherits="GameFontNormal" text="FP_TEXT_FILTER_LABEL">
+							<Color r="1.0" g="1.0" b="0.0"/>
+							<Anchors>
+								<Anchor point="TOPLEFT" relativeTo="$parentWh" relativePoint="BOTTOMLEFT">
+									<Offset>
+										<AbsDimension x="0" y="-42"/>
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -999,7 +1009,7 @@
 							</Anchor>
 						</Anchors>
 						<Scripts>
-							<OnTabPressed>FP_MenuFrameWhText:SetFocus()</OnTabPressed>
+							<OnTabPressed>FP_MenuFrameFilterText:SetFocus()</OnTabPressed>
 							<OnEscapePressed>self:ClearFocus()</OnEscapePressed>
 							<OnUpdate>FP_UserDefinedAdMsg = self:GetText()</OnUpdate>
 						</Scripts>
@@ -1017,6 +1027,38 @@
 						</Anchors>
 						<Scripts>
 							<OnClick>FP_MenuClicked(self, button, "MENU_ANNOUNCE")</OnClick>
+						</Scripts>
+					</Button>
+					<EditBox name="$parentFilterText" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false">
+						<Size>
+							<AbsDimension x="540" y="26"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="LEFT" relativeTo="$parentFilter">
+								<Offset>
+									<AbsDimension x="80" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnTabPressed>FP_MenuFrameWhText:SetFocus()</OnTabPressed>
+							<OnEscapePressed>self:ClearFocus()</OnEscapePressed>
+							<OnEnterPressed>FP_MenuClicked(self, button, "APPLY_FILTER") self:ClearFocus()</OnEnterPressed>
+						</Scripts>
+					</EditBox>
+					<Button name="$parentFilterApply" inherits="UIPanelButtonTemplate" text="FP_TEXT_APPLY_FILTER">
+						<Size>
+							<AbsDimension x="90" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentFilterText">
+								<Offset>
+									<AbsDimension x="10" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>FP_MenuClicked(self, button, "APPLY_FILTER")</OnClick>
 						</Scripts>
 					</Button>
 				</Frames>
