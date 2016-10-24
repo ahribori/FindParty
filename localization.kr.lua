@@ -102,7 +102,7 @@ FP_OPTIONS_RESETALL = "모든 설정 초기화"
 
 FP_HELPS = {
 	"|cffffff00---- 제작자 : 아젤리아(성기사 @ 달라란)",
-	"|cffffff00---- 수정자 : 법사세린(마법사 @ 아즈샤라)",
+	"|cffffff00---- 수정자 : 법사세린(마법사 @ 아즈샤라), 아리보리(마법사 @ 아즈샤라)",
 	"|cffffff00---- version |cffff0000"..GetAddOnMetadata("FindParty", "version"),
 	" ",
 	"|cffffff00 사용법",
@@ -120,8 +120,8 @@ FP_HELPS = {
 	"|cffffff00    미니맵 아이콘 보기 : 미니맵 아이콘 표시",
 	"|cffffff00     - 숨김 UI는 단축키 지정 또는 /fp 로 이용가능",
 	"|cffffff00    ESC로 창 닫기 : ESC를 눌러서 UI 닫기",
-	"|cffffff00    우클릭 파티 신청",
-	"|cffffff00     : 목록에서 우클릭으로 대상에게 귓속말 가능",
+	"|cffffff00    Ctrl + 우클릭 파티 신청",
+	"|cffffff00     : 목록에서 Ctrl + 우클릭으로 대상에게 귓속말 가능",
 	"|cffffff00    [] 있을때 비활성화",
 	"|cffffff00     : [] 인스턴스 내부일때 애드온을 비활성화함",
 	"|cffffff00     : 낮은 사양일 때 다소 성능향상이 있을수 있음",
