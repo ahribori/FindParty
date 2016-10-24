@@ -77,6 +77,13 @@ FP_DIFFICULTY_KEYWORDS = {
 		color = {1.0, 0.7, 0.7},
 		keywords = {},
 	},
+	[10] = {
+		name = "쐐기돌",
+		dbname = "Keystone",
+		postfix = "|cffff0000 (K)",
+		color = {0.7, 0, 0.7},
+		keywords = {"쐐기","2단","3단","4단","5단","6단","7단","8단","9단","10단","11단","12단","13단","14단","15단","2레벨","3레벨","4레벨","5레벨","6레벨","7레벨","8레벨","9레벨","10레벨","11레벨","12레벨","13레벨","14레벨","15레벨"},
+	},
 }
 
 -- ==============================
@@ -86,7 +93,7 @@ FP_DIFFICULTY_KEYWORDS = {
 -- name은 던전 이름을 입력하며, 낮은 번호가 우선으로 인식됩니다. 번호가 중복되지 않도록 하여주시기 바랍니다.
 -- difficulty는 해당 던전에 존재하는 난이도를 정의하는 부분입니다. 난이도 정의의 dbname에 맞게 입력하셔야 합니다.
 -- keywords는 파티모집 문구에 해당 문자열이 있을 경우 해당 난이도로 분류할 수 있도록 정의하는 부분입니다.
--- heroickeywods는 던전 분류후 해당 문자열이 발견될 경우 영웅 난이도로 분류하도록 별도로 정의하는 부분입니다. 
+-- heroickeywods는 던전 분류후 해당 문자열이 발견될 경우 영웅 난이도로 분류하도록 별도로 정의하는 부분입니다.
 -- 시네스트라나 비룡팟등 기본 하드 진행인데, 하드로 분류되지 않는 경우를 대비하여 만들어 졌습니다. 하드 난이도에만 존재하는 네임드의 경우, 이 곳에 키워드를 적을 수 있습니다.
 -- 단, 이 경우 던전 분류시 인식하지 않으므로 던전 분류에서 해당 키워드를 기재하여 우선 던전을 인식시키는 작업이 필요합니다. (황혼의 요새를 참고하시기 바랍니다.)
 FP_DUNGEON_KEYWORDS = {
@@ -606,7 +613,7 @@ FP_DUNGEON_KEYWORDS = {
 			[1] = {
 				name = "마법학자의 정원",
 				difficulty = {"heroic", "normal"},
-				keywords = {"마법학자", "마정", "정원", "매타조"},
+				keywords = {"매타조"},
 			},
 			[2] = {
 				name = "메카나르",
@@ -672,16 +679,16 @@ FP_DUNGEON_KEYWORDS = {
 				name = "지옥불 성루",
 				difficulty = {"heroic", "normal"},
 				keywords = {"성루"},
-			},		
+			},
 			[15] = {
 				name = "검은 늪",
 				difficulty = {"heroic", "normal"},
 				keywords = {"검은늪", "검늪"},
-			},		
+			},
 			[16] = {
 				name = "옛 언덕마루 구릉지",
 				difficulty = {"heroic", "normal"},
-				keywords = {"옛언덕", "옛힐", "힐스"},
+				keywords = {"옛언덕", "옛힐"},
 			},
 		},
 	},
@@ -769,17 +776,17 @@ FP_DUNGEON_KEYWORDS = {
 				name = "스트라솔름",
 				difficulty = {"normal"},
 				keywords = {"남작"}, -- 솔름 키워드를 추가하지 마세요. 옛 솔름과 겹칩니다.
-			},		
+			},
 			[12] = {
 				name = "울다만",
 				difficulty = {"normal"},
 				keywords = {"울다만"},
-			},		
+			},
 			[13] = {
 				name = "줄파락",
 				difficulty = {"normal"},
 				keywords = {"즐파락"},
-			},		
+			},
 			[14] = {
 				name = "통곡의 동굴",
 				difficulty = {"normal"},
@@ -802,13 +809,18 @@ FP_DUNGEON_KEYWORDS = {
 			},
 			[2] = {
 				name = "에메랄드의 악몽",
-				difficulty = {"normal", "heroic", "25lfr", "mythic"},
+				difficulty = {"normal", "heroic", "mythic"},
 				keywords = {"에메", "에메랄드", "악몽", "자비"},
 			},
 			[3] = {
 				name = "밤의 요새",
-				difficulty = {"normal", "heroic", "25lfr", "mythic"},
+				difficulty = {"normal", "heroic", "mythic"},
 				keywords = {"밤요", "밤의 요새", "굴단"},
+			},
+			[4] = {
+				name = "용맹의 시험",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"용맹", "오딘", "구아름", "헬리아","시험"},
 			},
 		},
 	},
@@ -817,22 +829,22 @@ FP_DUNGEON_KEYWORDS = {
 		dungeon = {
 			[1] = {
 				name = "감시관의 금고",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"감시", "감시관", "금고"},
 			},
 			[2] = {
 				name = "검은 떼까마귀 요새",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"검떼까", "검요", "검은 떼"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"검떼까", "검요", "검은", "까마귀","검까"},
 			},
 			[3] = {
 				name = "넬타리온의 둥지",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"넬타", "넬타리온의 둥지", "넬둥"},
 			},
 			[4] = {
 				name = "별의 궁정",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"별궁", "별의 궁정","궁전"},
 			},
 			[5] = {
@@ -842,28 +854,28 @@ FP_DUNGEON_KEYWORDS = {
 			},
 			[6] = {
 				name = "비전로",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"비전로"},
 			},
 			[7] = {
 				name = "아즈샤라의 눈",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"아즈눈", "아즈"},
 			},
 			[8] = {
 				name = "어둠심장 숲",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"어숲", "어둠심장"},
 			},
 			[9] = {
 				name = "영혼의 아귀",
-				difficulty = {"normal", "heroic", "mythic"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
 				keywords = {"영혼의 아귀", "아귀"},
 			},
 			[10] = {
 				name = "용맹의 전당",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"용전", "용맹의 전당", "용맹","전당"},
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"용전", "용맹의 전당", "전당"},
 			},
 			[11] = {
 				name = "카라잔",
@@ -907,7 +919,7 @@ FP_HEROIC_POSTFIX_KEYWORDS = {"H"}
 -- 도전 모드는 정상적으로 인식되며 "도전" 을 도적으로 오인식하는 경우가 줄어듭니다.
 -- 영어 사용시 대문자로만 적으세요. (자동으로 대문자 변환함)
 FP_DUNGEON_IGNORE_KEYWORDS = {
-	"OR", "AND", 
+	"OR", "AND",
 	"길드금고",--모구샨금고 오분류
 	"황혼의고원", "황혼투기장",--황혼의 요새 오분류
 	"할줄아",--줄아만 오분류
@@ -927,7 +939,7 @@ FP_DIFFICULTY_IGNORE_KEYWORDS = {
 	--시간 관련 문자열들 제거
 	"OR", "AND", "1탐", "2탐", "일시", "1시", "2시", "3시", "4시", "5시", "6시", "7시", "8시", "9시", "10시", "11시", "12시", "20시", "22시", "~1", "~10", ":33", "~33", "~20", "1~", "10~", "20~", "22:", "22~", ":55", "~55", "55분", "1:", "10:", "20:", ":0", ":1",
 	--기타 오인식 문자열 제거
-	 "10렙", "10레벨", "25렙", "25레벨", "1레벨", "1렙", "LV.25", "하드X", "10하드", "탄공이상",
+	"10렙", "10레벨", "25렙", "25레벨", "1레벨", "1렙", "LV.25", "하드X", "10하드", "탄공이상",
 }
 
 -- 목록 툴팁에서 가독성에 영향을 주는 문자열을 사전 제거 합니다. 가능한 최소로 사용하세요.
