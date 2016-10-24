@@ -12,7 +12,7 @@
 	<SimpleHTML name="FP_StringTemplate" virtual="true">
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="$parentText" inherits="FP_FontLeft">
+				<FontString name="$parentText" inherits="FP_FontLeft" maxlines="1">
 					<Anchors>
 						<Anchor point="RIGHT"/>
 						<Anchor point="LEFT"/>
