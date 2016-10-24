@@ -1349,6 +1349,7 @@ function FP_Refresh(quick)
 
 	local maxScroll = 0
 	local rowIdx = 1
+
 	for i = 1, table.getn(frameData) do
 		local info = frameData[i]
 		if info then
@@ -1360,19 +1361,19 @@ function FP_Refresh(quick)
 			-- FP_CustomFiletr 함수는 광고 문자열을 인자로 받아, 사용자가 직접 입력한 문자들과 대조해
 			-- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
 			-- -]]
-			if (FP_CustomFilter(info.msg)) then
-				if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name)) then
-					if info == shouterSelected then
-						shouterSelected = nil
-					end
-					info.enabled = false
-					info.num = nil
-				else
-					maxScroll = maxScroll + 1
-					info.enabled = true
-					info.num = maxScroll
+
+			if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name) or not FP_CustomFilter(info.msg)) then
+				if info == shouterSelected then
+					shouterSelected = nil
 				end
+				info.enabled = false
+				info.num = nil
+			else
+				maxScroll = maxScroll + 1
+				info.enabled = true
+				info.num = maxScroll
 			end
+
 
 			if info.enabled and info.num > listOffset and rowIdx <= FP_Options.viewLines then
 				local rowName = "FP_ListFrameRow"..tostring(rowIdx)
@@ -1785,6 +1786,7 @@ function FP_AddList(name, rawmsg, class)
 	
 	if dungeon then
 		msg = FP_FilterIgnoreText(rawmsg, FP_TOOLTIP_IGNORE_KEYWORDS, true)
+
 		if frameData[name] then
 			frameData[name].dungeon = dungeon
 			frameData[name].dungeon_keyword = dungeon_keyword
@@ -1809,6 +1811,7 @@ function FP_AddList(name, rawmsg, class)
 			table.insert(frameData, info)
 			frameData[name] = info
 		end
+
 		FP_Refresh()
 	end
 end
@@ -1925,16 +1928,6 @@ function FP_OnUpdate(self, elapsed)
 
 		FP_Refresh(true)
 	end
-
-	local j = 1
-	while j <= table.getn(frameData) do
-		if(not FP_CustomFilter(frameData[j].msg)) then
-			FP_RemoveList(frameData[j].name)
-		else
-			j = j + 1
-		end
-	end
-
 end
 
 ------------------------
