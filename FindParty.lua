@@ -973,16 +973,25 @@ end
 -- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
 -- -]]
 function FP_CustomFilter(msg)
+	local table = {
+		['flag'] = false,
+		['msg'] = msg
+	}
 	local userInputCustomFilterString = FP_UserDefineFilterMsg
 	if userInputCustomFilterString == "" then
-		return true
+		table.flag = true
+		table.msg = msg
+		return table
 	end
 	for word in string.gmatch(userInputCustomFilterString, '([^,]+)') do
+		word = string.gsub(word, " ", "")
 		if string.find(msg, word) then
-			return true
+			msg = string.gsub(msg, word, '|cff7fff00'..word..'|cffffffff')
+			table.flag = true
+			table.msg = msg
 		end
 	end
-	return false
+	return table
 end
 
 function FP_SetCustomFilterText()
@@ -1361,8 +1370,8 @@ function FP_Refresh(quick)
 			-- FP_CustomFiletr 함수는 광고 문자열을 인자로 받아, 사용자가 직접 입력한 문자들과 대조해
 			-- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
 			-- -]]
-
-			if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name) or not FP_CustomFilter(info.msg)) then
+			local filtered = FP_CustomFilter(info.msg)
+			if (not FP_DungeonFilter(info.dungeon, info.mode) or not FP_ExceptionFilter(info.name) or not filtered.flag) then
 				if info == shouterSelected then
 					shouterSelected = nil
 				end
@@ -1390,7 +1399,7 @@ function FP_Refresh(quick)
 				_G[rowName.."TimeText"]:SetText(info.time)
 
 				--Message
-				local msg = info.msg
+				local msg = filtered.msg
 
 				_G[rowName.."MsgText"]:SetText(msg)
 				_G[rowName.."DungeonText"]:SetText(info.dungeon)
