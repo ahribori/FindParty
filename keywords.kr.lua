@@ -1,6 +1,6 @@
 ﻿--if GetLocale() ~= "koKR" then return end
 -------------------------------------------
--- 최종수정 : 2013/10/01 11:18
+-- 최종수정 : 2017/3/31
 
 -- 각종 필터링 정보를 담고 있는 파일입니다.
 -- 패치로 새로운 던전이 추가되거나 난이도가 추가될 경우 이 파일에서 수정하시면 됩니다.
@@ -98,6 +98,101 @@ FP_DIFFICULTY_KEYWORDS = {
 -- 단, 이 경우 던전 분류시 인식하지 않으므로 던전 분류에서 해당 키워드를 기재하여 우선 던전을 인식시키는 작업이 필요합니다. (황혼의 요새를 참고하시기 바랍니다.)
 FP_DUNGEON_KEYWORDS = {
 	[1] = {
+		category = "군단 공격대",
+		dungeon = {
+			[1] = {
+				name = "필드보스",
+				difficulty = {"normal"},
+				keywords = {"필드보스", "필보", "아나", "칼라", "드루곤", "바다떠돌이", "휴몽", "레반", "나자크", "니소그", "샤르", "영혼약탈자", "메마른 짐"},
+			},
+			[2] = {
+				name = "에메랄드의 악몽",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"에메", "에메랄드", "악몽", "자비"},
+			},
+			[3] = {
+				name = "밤의 요새",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"밤요", "밤의 요새", "굴단"},
+			},
+			[4] = {
+				name = "용맹의 시험",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"용맹", "오딘", "구아름", "헬리아","시험"},
+			},
+			[5] = {
+				name = "살게라스의 무덤",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"살게", "살게라스", "살무", "무덤", "고로스", "심문관", "하르자탄", "달의자매" , "여군주", "사스즈인", "경계", "여신", "화신", "킬제덴"},
+			},
+		},
+	},
+	[2] = {
+		category = "군단 던전",
+		dungeon = {
+			[1] = {
+				name = "감시관의 금고",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"감시", "감시관", "금고"},
+			},
+			[2] = {
+				name = "검은 떼까마귀 요새",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"검떼까", "검요", "검은", "까마귀","검까"},
+			},
+			[3] = {
+				name = "넬타리온의 둥지",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"넬타", "넬타리온의 둥지", "넬둥"},
+			},
+			[4] = {
+				name = "별의 궁정",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"별궁", "별의 궁정","궁전"},
+			},
+			[5] = {
+				name = "보랏빛 요새 침공",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"보요"},
+			},
+			[6] = {
+				name = "비전로",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"비전로"},
+			},
+			[7] = {
+				name = "아즈샤라의 눈",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"아즈눈", "아즈"},
+			},
+			[8] = {
+				name = "어둠심장 숲",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"어숲", "어둠심장"},
+			},
+			[9] = {
+				name = "영혼의 아귀",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"영혼의 아귀", "아귀"},
+			},
+			[10] = {
+				name = "용맹의 전당",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"용전", "용맹의 전당", "전당"},
+			},
+			[11] = {
+				name = "카라잔",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"카라"},
+			},
+			[12] = {
+				name = "영원한 밤의 대성당",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"영밤", "대성당"},
+			},
+		},
+	},
+	[3] = {
 		category = "드레노어의 전쟁군주 공격대",
 		dungeon = {
 			[1] = {
@@ -139,7 +234,7 @@ FP_DUNGEON_KEYWORDS = {
 			}
 		},
 	},
-	[2] = {
+	[4] = {
 		category = "드레노어의 전쟁군주 던전",
 		dungeon = {
 			[1] = {
@@ -196,7 +291,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[3] = {
+	[5] = {
 		category = "판다리아의 안개 공격대",
 		dungeon = {
 			[1] = {
@@ -261,7 +356,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[4] = {
+	[6] = {
 		category = "판다리아의 안개 던전",
 		dungeon = {
 			[1] = {
@@ -317,7 +412,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[5] = {
+	[7] = {
 		category = "대격변 공격대",
 		dungeon = {
 			[1] = {
@@ -353,7 +448,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[6] = {
+	[8] = {
 		category = "대격변 던전",
 		dungeon = {
 			[1] = {
@@ -424,7 +519,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[7] = {
+	[9] = {
 		category = "리치왕의 분노 공격대",
 		dungeon = {
 			[1] = {
@@ -476,7 +571,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[8] = {
+	[10] = {
 		category = "리치왕의 분노 던전",
 		dungeon = {
 			[1] = {
@@ -562,7 +657,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[9] = {
+	[11] = {
 		category = "불타는 성전 공격대",
 		dungeon = {
 			[1] = {
@@ -607,7 +702,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[10] = {
+	[12] = {
 		category = "불타는 성전 던전",
 		dungeon = {
 			[1] = {
@@ -692,7 +787,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[11] = {
+	[13] = {
 		category = "오리지널 공격대",
 		dungeon = {
 			[1] = {
@@ -717,7 +812,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[12] = {
+	[14] = {
 		category = "오리지널 던전",
 		dungeon = {
 			[1] = {
@@ -796,91 +891,6 @@ FP_DUNGEON_KEYWORDS = {
 				name = "혈투의 전장",
 				difficulty = {"normal"},
 				keywords = {"혈투", "혈장"},
-			},
-		},
-	},
-	[13] = {
-		category = "군단 공격대",
-		dungeon = {
-			[1] = {
-				name = "필드보스",
-				difficulty = {"normal"},
-				keywords = {"필드보스", "필보", "아나", "칼라", "드루곤", "바다떠돌이", "휴몽", "레반", "나자크", "니소그", "샤르", "영혼약탈자", "메마른 짐"},
-			},
-			[2] = {
-				name = "에메랄드의 악몽",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"에메", "에메랄드", "악몽", "자비"},
-			},
-			[3] = {
-				name = "밤의 요새",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"밤요", "밤의 요새", "굴단"},
-			},
-			[4] = {
-				name = "용맹의 시험",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"용맹", "오딘", "구아름", "헬리아","시험"},
-			},
-		},
-	},
-	[14] = {
-		category = "군단 던전",
-		dungeon = {
-			[1] = {
-				name = "감시관의 금고",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"감시", "감시관", "금고"},
-			},
-			[2] = {
-				name = "검은 떼까마귀 요새",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"검떼까", "검요", "검은", "까마귀","검까"},
-			},
-			[3] = {
-				name = "넬타리온의 둥지",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"넬타", "넬타리온의 둥지", "넬둥"},
-			},
-			[4] = {
-				name = "별의 궁정",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"별궁", "별의 궁정","궁전"},
-			},
-			[5] = {
-				name = "보랏빛 요새 침공",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"보요"},
-			},
-			[6] = {
-				name = "비전로",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"비전로"},
-			},
-			[7] = {
-				name = "아즈샤라의 눈",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"아즈눈", "아즈"},
-			},
-			[8] = {
-				name = "어둠심장 숲",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"어숲", "어둠심장"},
-			},
-			[9] = {
-				name = "영혼의 아귀",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"영혼의 아귀", "아귀"},
-			},
-			[10] = {
-				name = "용맹의 전당",
-				difficulty = {"normal", "heroic", "mythic","Keystone"},
-				keywords = {"용전", "용맹의 전당", "전당"},
-			},
-			[11] = {
-				name = "카라잔",
-				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"카라"},
 			},
 		},
 	},
