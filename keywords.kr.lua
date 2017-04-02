@@ -118,7 +118,7 @@ FP_DUNGEON_KEYWORDS = {
 			[4] = {
 				name = "용맹의 시험",
 				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"용맹", "오딘", "구아름", "헬리아","시험"},
+				keywords = {"용시", "용맹", "오딘", "구아름", "헬리아", "시험"},
 			},
 			[5] = {
 				name = "살게라스의 무덤",
