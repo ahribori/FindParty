@@ -113,7 +113,7 @@ FP_DUNGEON_KEYWORDS = {
 			[3] = {
 				name = "밤의 요새",
 				difficulty = {"normal", "heroic", "mythic"},
-				keywords = {"밤요", "밤의 요새", "굴단"},
+				keywords = {"밤요", "밤의요새", "밤의 요새", "굴단"},
 			},
 			[4] = {
 				name = "용맹의 시험",
