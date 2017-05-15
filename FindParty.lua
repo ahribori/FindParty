@@ -1312,6 +1312,7 @@ function FP_IconClicked(self, button)
 					GameTooltip:Hide()
 				else
 					FP_Print(FP_MESSAGE_ICON_UNLOCK)
+					FP_Minimap_Button:RegisterForDrag("LeftButton")
 					GameTooltip:Hide()
 				end
 			end
