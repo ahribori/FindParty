@@ -1,10 +1,10 @@
-## Interface: 70200
+## Interface: 70300
 ## Title: FindParty
 ## Title-koKR: FindParty - 파티 찾기 도우미
 ## Notes: Filtering party channel.
 ## Notes-koKR: 파티찾기 채널을 필터링해서 보여줍니다.
 ## Author: 법사세린 - Azshara, Korea / 일분일초 - Stormrage, Korea / 아리보리 - Azshara, Korea
-## Version: 7.2.0
+## Version: 7.3.0
 ## SavedVariables: FP_Version, FP_Options, FP_Filter_Dungeon, FP_Minimap_Save, FP_Position_Save
 ## SavedVariablesPerCharacter: FP_UserDefinedWhMsg, FP_UserDefinedAdMsg
 
