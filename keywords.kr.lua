@@ -125,6 +125,11 @@ FP_DUNGEON_KEYWORDS = {
 				difficulty = {"normal", "heroic", "mythic"},
 				keywords = {"살게", "살게라스", "살무", "무덤", "고로스", "심문관", "하르자탄", "달의자매" , "여군주", "사스즈인", "경계", "여신", "화신", "킬제덴"},
 			},
+			[6] = {
+				name = "안토러스 - 불타는 왕좌",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"안토러스", "불타는왕좌", "불타는 왕좌", "가로시", "세계파괴자", "사냥개", "의회", "하사벨", "이오나", "이모나르", "킨가로스", "바리마트라스", "쉬바라", "아그라마르", "사멸자", "아르거스" },
+			}
 		},
 	},
 	[2] = {
@@ -189,6 +194,11 @@ FP_DUNGEON_KEYWORDS = {
 				name = "영원한 밤의 대성당",
 				difficulty = {"normal", "heroic", "mythic"},
 				keywords = {"영밤", "대성당"},
+			},
+			[13] = {
+				name = "삼두정의 권좌",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"삼두정", "권좌"},
 			},
 		},
 	},
