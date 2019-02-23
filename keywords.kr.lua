@@ -97,7 +97,87 @@ FP_DIFFICULTY_KEYWORDS = {
 -- 시네스트라나 비룡팟등 기본 하드 진행인데, 하드로 분류되지 않는 경우를 대비하여 만들어 졌습니다. 하드 난이도에만 존재하는 네임드의 경우, 이 곳에 키워드를 적을 수 있습니다.
 -- 단, 이 경우 던전 분류시 인식하지 않으므로 던전 분류에서 해당 키워드를 기재하여 우선 던전을 인식시키는 작업이 필요합니다. (황혼의 요새를 참고하시기 바랍니다.)
 FP_DUNGEON_KEYWORDS = {
-	[1] = {
+[1] = {
+		category = "격전의 아제로스 공격대",
+		dungeon = {
+			[1] = {
+				name = "폭풍의 용광로",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"폭용", "용광로", "폭풍"},
+			},
+			[2] = {
+				name = "다자알로 전투",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"다전", "줄공", "줄다", "다자알로", "의회", "라스타칸", "멕카토크", "제이나"},
+			},
+			[3] = {
+				name = "울디르",
+				difficulty = {"normal", "heroic", "mythic"},
+				keywords = {"울디르", "울디", "포식자", "미스", "미스락스", "그훈", "시초"},
+			},
+			[4] = {
+				name = "필드보스",
+				difficulty = {"normal"},
+				keywords = {"필드보스", "필보", "티제인", "지아라크", "우박피조물", "사자의 포효", "아주레토스", "예나즈", "크롤로크", "이부스"},
+			},
+		},
+	},
+	[2] = {
+		category = "격전의 아제로스 던전",
+		dungeon = {
+			[1] = {
+				name = "보랄러스 공성전",
+				difficulty = {"mythic","Keystone"},
+				keywords = {"보랄", "보랄러스", "보공"},
+			},
+			[2] = {
+				name = "세스랄리스 사원",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"세스", "세스랄리스"},
+			},
+			[3] = {
+				name = "썩은굴",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"썩은굴", "썩굴"},
+			},
+			[4] = {
+				name = "아탈다자르",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"아탈", "아탈다자르"},
+			},
+			[5] = {
+				name = "왕노다지 광산!!!",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"광산", "왕노다지", "노다지", "왕노", "왕관"},
+			},
+			[6] = {
+				name = "왕들의 안식처",
+				difficulty = {"mythic","Keystone"},
+				keywords = {"왕안"},
+			},
+			[7] = {
+				name = "웨이크레스트 저택",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"웨이", "웨이크", "웨이크레스트", "저택"},
+			},
+			[8] = {
+				name = "자유지대",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"자유지대", "자유", "자지"},
+			},
+			[9] = {
+				name = "톨 다고르",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"톨다", "톨다고르"},
+			},
+			[10] = {
+				name = "폭풍의 사원",
+				difficulty = {"normal", "heroic", "mythic","Keystone"},
+				keywords = {"폭사"},
+			},
+		},
+	},
+	[3] = {
 		category = "군단 공격대",
 		dungeon = {
 			[1] = {
@@ -132,7 +212,7 @@ FP_DUNGEON_KEYWORDS = {
 			}
 		},
 	},
-	[2] = {
+	[4] = {
 		category = "군단 던전",
 		dungeon = {
 			[1] = {
@@ -202,7 +282,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[3] = {
+	[5] = {
 		category = "드레노어의 전쟁군주 공격대",
 		dungeon = {
 			[1] = {
@@ -244,7 +324,7 @@ FP_DUNGEON_KEYWORDS = {
 			}
 		},
 	},
-	[4] = {
+	[6] = {
 		category = "드레노어의 전쟁군주 던전",
 		dungeon = {
 			[1] = {
@@ -301,7 +381,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[5] = {
+	[7] = {
 		category = "판다리아의 안개 공격대",
 		dungeon = {
 			[1] = {
@@ -366,7 +446,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[6] = {
+	[8] = {
 		category = "판다리아의 안개 던전",
 		dungeon = {
 			[1] = {
@@ -422,7 +502,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[7] = {
+	[9] = {
 		category = "대격변 공격대",
 		dungeon = {
 			[1] = {
@@ -458,7 +538,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[8] = {
+	[10] = {
 		category = "대격변 던전",
 		dungeon = {
 			[1] = {
@@ -529,7 +609,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[9] = {
+	[11] = {
 		category = "리치왕의 분노 공격대",
 		dungeon = {
 			[1] = {
@@ -581,7 +661,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[10] = {
+	[12] = {
 		category = "리치왕의 분노 던전",
 		dungeon = {
 			[1] = {
@@ -667,7 +747,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[11] = {
+	[13] = {
 		category = "불타는 성전 공격대",
 		dungeon = {
 			[1] = {
@@ -712,7 +792,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[12] = {
+	[14] = {
 		category = "불타는 성전 던전",
 		dungeon = {
 			[1] = {
@@ -797,7 +877,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[13] = {
+	[15] = {
 		category = "오리지널 공격대",
 		dungeon = {
 			[1] = {
@@ -822,7 +902,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[14] = {
+	[16] = {
 		category = "오리지널 던전",
 		dungeon = {
 			[1] = {
@@ -904,7 +984,7 @@ FP_DUNGEON_KEYWORDS = {
 			},
 		},
 	},
-	[15] = {
+	[17] = {
 		category = "기타",
 		dungeon = {
 			[1] = {
