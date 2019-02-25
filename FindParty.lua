@@ -972,26 +972,58 @@ end
 -- FP_CustomFiletr 함수는 광고 문자열을 인자로 받아, 사용자가 직접 입력한 문자들과 대조해
 -- 입력한 문자열이 광고 문자열 내에 존재하면 true, 아니면 false를 반환한다.
 -- -]]
+
+--[[- 2019-02-25 아리보리(아즈샤라)
+-- query 지원
+-- 특정단어 제외 기능 추가
+-- -]]
 function FP_CustomFilter(msg)
-	local table = {
+	local result = {
 		['flag'] = false,
 		['msg'] = msg
 	}
 	local userInputCustomFilterString = FP_UserDefineFilterMsg
 	if userInputCustomFilterString == "" then
-		table.flag = true
-		table.msg = msg
-		return table
+		result.flag = true
+		result.msg = msg
+		return result
 	end
-	for word in string.gmatch(userInputCustomFilterString, '([^,]+)') do
+
+	local includePattern = '([^,+-]+)'
+	local excludePattern = '([-]+[^%p]+)'
+	local includeCount = 0;
+	local excludeCount = 0;
+
+	for word in string.gmatch(userInputCustomFilterString, includePattern) do
+		includeCount = includeCount + 1;
+	end
+
+	for word in string.gmatch(userInputCustomFilterString, excludePattern) do
+		word = string.gsub(word, "-", "")
+		excludeCount = excludeCount + 1;
+		if string.find(msg, word) then
+			result.flag = false
+			result.msg = msg
+			return result
+		end
+	end
+
+	if (includeCount - excludeCount == 0) then
+		result.flag = true
+		result.msg = msg
+		return result
+	end
+
+	for word in string.gmatch(userInputCustomFilterString, includePattern) do
 		word = string.gsub(word, " ", "")
 		if string.find(msg, word) then
 			msg = string.gsub(msg, word, '|cff7fff00'..word..'|cffffffff')
-			table.flag = true
-			table.msg = msg
+			result.flag = true
+			result.msg = msg
 		end
 	end
-	return table
+
+	return result
 end
 
 function FP_SetCustomFilterText()
