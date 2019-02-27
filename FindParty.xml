@@ -838,7 +838,7 @@
 			</Frame>
 			<Frame name="FP_MenuFrame" inherits="FP_FrameTemplate">
 				<Size>
-					<AbsDimension x="750" y="130"/>
+					<AbsDimension x="750" y="155"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOP" relativeTo="FP_ListFrame" relativePoint="BOTTOM">
@@ -875,6 +875,16 @@
 								<Anchor point="TOPLEFT" relativeTo="$parentWh" relativePoint="BOTTOMLEFT">
 									<Offset>
 										<AbsDimension x="0" y="-42"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+						<FontString name="$parentFilter" inherits="GameFontNormal" text="FP_TEXT_FILTER_DESCRIPTION">
+							<Color r="1.0" g="1.0" b="1.0"/>
+							<Anchors>
+								<Anchor point="TOPLEFT" relativeTo="$parentWh" relativePoint="BOTTOMLEFT">
+									<Offset>
+										<AbsDimension x="80" y="-69"/>
 									</Offset>
 								</Anchor>
 							</Anchors>

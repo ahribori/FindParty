@@ -19,6 +19,7 @@ FP_TEXT_APPLY_FILTER = "필터적용"
 FP_TEXT_WH_LABEL = "귓속말 문구 : "
 FP_TEXT_AD_LABEL = "광고글 문구 : "
 FP_TEXT_FILTER_LABEL = "필터링 문구 : "
+FP_TEXT_FILTER_DESCRIPTION = "필터링 문구 사용 예: |cff7fff00+사과|cffff0000-바나나 |cffffffff(사과가 포함된 광고만 노출. 단, 바나나가 들어간 광고는 제외)"
 FP_TEXT_CLOSE = "닫기"
 FP_TEXT_LIST_LABEL = "광고 문구"
 
