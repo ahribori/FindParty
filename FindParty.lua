@@ -1137,9 +1137,9 @@ function FP_Announce()
 	for chan, enabled in pairs(FP_Options.channel) do
 		if enabled then
 			local found
-			for i = 1, #list/2 do
-				if list[i * 2] == chan then
-					chaNum = list[i * 2 - 1]
+			for i = 1, #list do
+				if i % 3 == 2 and list[i] == chan then
+					chaNum = list[i-1]
 					found = true
 					break
 				end
@@ -1561,8 +1561,10 @@ end
 local function getChannel()
 	table.wipe(FP_Option_Menu[1]["value"])
 	local list = { GetChannelList() }
-	for i = 1, #list/2 do
-		table.insert(FP_Option_Menu[1]["value"], list[i * 2])
+	for i = 1, #list do
+		if i % 3 == 2 then
+			table.insert(FP_Option_Menu[1]["value"], list[i])
+		end
 	end
 end
 
@@ -1576,8 +1578,8 @@ local function setChannel(self, channel)
 	local list = { GetChannelList() }
 	for channelname, bool in pairs(FP_Options["channel"]) do
 		local isValidChannel = false
-		for i = 1, #list/2 do
-			if list[i * 2] == channelname then
+		for i = 1, #list do
+			if i % 3 == 2 and list[i] == channelname then
 				isValidChannel = true
 				break
 			end
@@ -1801,7 +1803,7 @@ function FP_AddList(name, rawmsg, class)
 	local msg
 	local msg_dungeon
 	local t = GetTime()
-	
+
 	-- See if sender already exists in our frameData
 	if frameData[name] then
 		if (t - frameData[name].fullscan) < 90 then
@@ -1822,10 +1824,10 @@ function FP_AddList(name, rawmsg, class)
 			end
 		end
 	end
-	
+
 	-- Dungeon Parse
 	local dungeon, difficulty, dungeon_keyword = FP_DungeonParse(rawmsg)
-	
+
 	if dungeon then
 		msg = FP_FilterIgnoreText(rawmsg, FP_TOOLTIP_IGNORE_KEYWORDS, true)
 
@@ -1915,7 +1917,7 @@ function FP_OnEvent(event, ...)
 
 	if event == "CHAT_MSG_CHANNEL" then
 		local arg1, arg2, _, _, _, _, _, _, arg9, _, _, arg12 = ...
-		
+
 		-- 제외부터 필터
 		if exceptionData then
 			for _,v in pairs(exceptionData) do
@@ -1924,13 +1926,13 @@ function FP_OnEvent(event, ...)
 				end
 			end
 		end
-		
+
 		-- remove zone suffix
 		local isZoneChannel = string.find(arg9, " - ")
 		if isZoneChannel then
 			arg9 = string.sub(arg9, 1, isZoneChannel - 1)
 		end
-		
+
 		-- now pass to FP_AddList()
 		if arg1 and FP_Options.channel[arg9] then
 			local name = Ambiguate(arg2, "none")
